@@ -12,7 +12,7 @@ touch = files
 
 bat.bat = [
 	@start .
-	@gvim -p core-Makefile
+	@gvim '-p' core-Makefile
 ]
 
 .gitignore = [

@@ -8,11 +8,15 @@
 #include <map>
 using namespace std;
 
+struct Sym;
+extern Sym env;
+extern void env_init();
 struct Sym {
 	string val;
 	Sym(string);
 	vector<Sym*> nest; void push(Sym*);
 	virtual string head(); string pad(int); virtual string dump(int=0);
+	virtual Sym* eval(Sym*E=&env);
 };
 
 struct Num:Sym { Num(string); };
